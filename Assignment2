@@ -1,0 +1,35 @@
+# Task B1
+driver = input("Enter driver name: ")
+destination = input("Enter destination: ")
+distance = float(input("Enter distance (km): "))
+fuel_consumption = float(input("Enter fuel consumption (L/100km): "))
+fuel_price = float(input("Enter fuel price (KZT/L): "))
+
+fuel_cost = (distance / 100) * fuel_consumption * fuel_price
+
+if distance < 100:
+    category = "Short trip"
+elif distance <= 500:
+    category = "Medium trip"
+else:
+    category = "Long trip"
+
+print("\n--- Trip Summary ---")
+print("Driver:", driver)
+print("Destination:", destination.upper())
+print("Distance:", distance, "km")
+print("Fuel cost:", fuel_cost, "KZT")
+print("Category:", category)
+
+# Task B2
+print("\nCost breakdown:")
+for km in range(100, int(distance) + 1, 100):
+    cost = (km / 100) * fuel_consumption * fuel_price
+    print(km, "km ->", cost, "KZT")
+
+# Task B3
+print("\nDestination analysis:")
+print("Uppercase:", destination.upper())
+print("Lowercase:", destination.lower())
+print("Length:", len(destination))
+print("Letter 'a':", destination.lower().count('a'))
